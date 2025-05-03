@@ -4,13 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function DeveloperCard({
-  image = "https://img.freepik.com/premium-photo/indian-happy-bank-employee-looking-camera-while-standing-office_466689-96668.jpg",
-  name = "Ayaan Rizvi",
-  skills = ["React", "Node.js", "MongoDB", "Tailwind CSS"],
-  experience = "3+ Years",
-  address = "Mumbai, Maharashtra, India",
-  qualification = "B.Tech in Computer Science",
-  bio = "Passionate full-stack developer with a knack for building scalable web apps and elegant UIs.",
+  image,
+  name,
+  skills,
+  experience,
+  address,
+  qualification,
+  bio,
 }) {
   return (
     <motion.div
@@ -24,7 +24,8 @@ function DeveloperCard({
         <img
           src={image}
           alt={name}
-          className="w-32 h-32 rounded-full object-cover border-4 border-[#04acaa] shadow-lg filter contrast-125 saturate-150"
+          loading="lazy"
+          className="w-32 h-32 rounded-full object-cover border-4 border-[#04acaa] shadow-lg  transition-transform duration-300 ease-in-out hover:scale-105"
         />
 
         <h2 className="text-2xl font-bold mt-4 text-[#04acaa] tracking-wide">
@@ -47,14 +48,15 @@ function DeveloperCard({
         <div>
           <strong className="text-white">Skills:</strong>
           <span className="flex flex-wrap gap-2 mt-1">
-            {skills.map((skill, idx) => (
-              <span
-                key={idx}
-                className="bg-[#04acaa1f] border border-[#04acaa80] px-3 py-1 rounded-full text-sm text-[#04acaa] hover:bg-[#04acaa33] transition-all"
-              >
-                {skill}
-              </span>
-            ))}
+            {skills &&
+              skills.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="bg-[#04acaa1f] border border-[#04acaa80] px-3 py-1 rounded-full text-sm text-[#04acaa] hover:bg-[#04acaa33] transition-all"
+                >
+                  {skill}
+                </span>
+              ))}
           </span>
         </div>
       </div>

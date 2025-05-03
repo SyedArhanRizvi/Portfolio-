@@ -4,6 +4,7 @@ import Company from './CAbout/Company';
 import Projects from './Projects/Projects';
 import EnquiryForm from './enquiry/EnquiryForm';
 import DeveloperSection from './AboutUs/DeveloperSection';
+import Services from './services/Services';
 
 function page() {
   return (
@@ -13,6 +14,9 @@ function page() {
       </div>
       <div id='company'>
         <Company></Company>
+      </div>
+      <div id='services'>
+        <Services></Services>
       </div>
       <div id='projects'>
           <Projects></Projects>

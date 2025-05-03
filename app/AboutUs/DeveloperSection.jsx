@@ -4,6 +4,44 @@ import { motion } from "framer-motion";
 import DeveloperCard from "../components/Cards/DeveloperCard";
 
 function DeveloperSection() {
+  const developers = [
+    {
+      image: "/basit.jpg",
+      name: "Basit Manzoor",
+      skills: [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "NextJS",
+        "Java",
+        "Python",
+      ],
+      experience: "3+ Years",
+      address: "Shri Nagar, Kashmir, India",
+      qualification: "B.Tech in Computer Science",
+      bio: "Passionate full-stack developer with a knack for building scalable web apps and elegant UIs.",
+    },
+    {
+      image: "/arhan.jpg",
+      name: "Syed Arhan Rizvi",
+      skills: [
+        "JavaScript",
+        "Ai/Ml",
+        "Node.js",
+        "MongoDB",
+        "ReactNative",
+        "NextJS",
+        "Java",
+        "C",
+      ],
+      experience: "3+ Years",
+      address: "Greater Noida, U.P, India",
+      qualification: "B.C.A (Amity University)",
+      bio: "Passionate full-stack mobile app and ai/ml developer with a knack for building scalable apps and ai/ml models.",
+    },
+  ];
   return (
     <section className="bg-[#111111] text-white py-16 px-6 md:px-16 min-h-screen">
       {/* Title Section */}
@@ -22,32 +60,28 @@ function DeveloperSection() {
           innovation, they bring ideas to life.
         </p>
       </motion.div>
-      {/* Developer Cards Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Developer Card 1 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          <DeveloperCard />
-        </motion.div>
-        {/* Developer Card 2 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-        >
-          <DeveloperCard />
-        </motion.div>
-        {/* Developer Card 3 */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <DeveloperCard />
-        </motion.div>
+    
+
+        {developers &&
+          developers.map((dev, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: idx * 0.3 + 0.3 }}
+            >
+              <DeveloperCard
+                image={dev.image}
+                name={dev.name}
+                skills={dev.skills}
+                experience={dev.experience}
+                address={dev.address}
+                qualification={dev.qualification}
+                bio={dev.bio}
+              />
+            </motion.div>
+          ))}
       </div>
     </section>
   );

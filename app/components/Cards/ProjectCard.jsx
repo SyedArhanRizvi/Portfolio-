@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-function ProjectCard() {
+function ProjectCard({name, desc, img, link, techStack}) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -16,30 +16,27 @@ function ProjectCard() {
       {/* Project Image */}
 
       <img
-        src="https://www.searchenginejournal.com/wp-content/uploads/2023/08/best-landing-page-examples-64e6080f990bb-sej.png" // <-- replace with actual path
-        alt="Project Screenshot"
+        src={img}
         className="rounded-xl w-full h-64 object-cover mb-6"
       />
       {/* Project Info */}
       <div className="space-y-4">
         <h2 className="text-3xl font-semibold text-[#04acaa]">
-          My Premium Project Name
+         {name}
         </h2>
 
         <p className="text-gray-300 text-lg">
-          This is a powerful and modern web application built for real-time
-          performance. It solves real-world problems using scalable architecture
-          and smooth UI.
+         {desc}
         </p>
         {/* Tech Stack */}
         <div className="text-sm text-gray-400">
           <span className="font-semibold text-white">Tech Stack:</span> ReactJS,
-          Tailwind CSS, Node.js, Express, MongoDB
+         {techStack}
         </div>
         {/* Buttons */}
         <div className="flex flex-wrap gap-4 mt-4">
           <a
-            href="https://your-live-project-link.com" // <-- replace with actual link
+            href={link} 
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-[#04acaa] border border-[#04acaa] hover:bg-[#04acaa] hover:text-black transition px-5 py-2 rounded-full"
