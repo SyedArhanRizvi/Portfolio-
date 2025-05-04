@@ -30,8 +30,8 @@ function ProjectCard({name, desc, img, link, techStack}) {
         </p>
         {/* Tech Stack */}
         <div className="text-sm text-gray-400">
-          <span className="font-semibold text-white">Tech Stack:</span> ReactJS,
-         {techStack}
+          <span className="font-semibold text-white">Tech Stack: </span>
+           {techStack}
         </div>
         {/* Buttons */}
         <div className="flex flex-wrap gap-4 mt-4">
